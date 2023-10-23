@@ -8,4 +8,9 @@ class ProductsController < ApplicationController
     @product = Product.find params[:id]
   end
 
+  def out_of_stock?(product)
+    product[:quantity].zero?
+  end
+  helper_method :out_of_stock?
+
 end
