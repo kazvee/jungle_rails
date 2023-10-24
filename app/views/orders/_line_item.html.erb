@@ -1,0 +1,9 @@
+<div class="line-item card">
+  <div class="card-body">
+    <img src="<%= line_item.product.image %>" alt="<%= line_item.product.name %>" class="card-img-top">
+    <h5 class="card-title"><%= line_item.product.name %></h5>
+    <p class="card-text"><%= line_item.product.description %></p>
+    <p class="card-text">Ordered <%= line_item.quantity %> item(s) at <%= humanized_money_with_symbol line_item.product.price %> each:
+    <p class="card-text">Line Item Total: <%= humanized_money_with_symbol line_item.product.price * line_item.quantity %> 
+  </div>
+</div>
