@@ -6,14 +6,36 @@
 
 <div class="order-summary jumbotron">
   <h4>Thank you for your order!</h4>
-  <h5>Final Amount: $<%= @order.total %></h5>
-  <h5>A copy of the below confirmation has been sent to: <%= @order.email %></h5>
+  Final Amount: <strong><%= humanized_money_with_symbol @order.total %></strong>
+  <p>Email associated with this order: <strong><%= @order.email %></strong></p>
 </div>
 
-<section class="orders-show">
+<div class="panel panel-default items">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="2">Product</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @order.line_items.each do |line_item| %>
-  <p><%= render 'line_item', line_item: line_item %></p>
-  <% end %>
-</section>
+    <p><%= render 'line_item', line_item: line_item %></p>
+    <% end %>
+    </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="4">
+        TOTAL:
+      </th>
+      <th>
+        <%= humanized_money_with_symbol @order.total %>
+      </th>
+    </tr>
+  </tfoot>
+</table>
+</div>
 
 <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
