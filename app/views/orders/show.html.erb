@@ -1,13 +1,19 @@
 <section class="orders-show">
 
-  <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
-  </header>
+<header class="page-header">
+  <h1>Order #<%= @order.id %></h1>
+</header>
 
-  <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
-  </div>
+<div class="order-summary jumbotron">
+  <h4>Thank you for your order!</h4>
+  <h5>Final Amount: $<%= @order.total %></h5>
+  <h5>A copy of the below confirmation has been sent to: <%= @order.email %></h5>
+</div>
 
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
+<section class="orders-show">
+  <% @order.line_items.each do |line_item| %>
+  <p><%= render 'line_item', line_item: line_item %></p>
+  <% end %>
 </section>
+
+<%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
