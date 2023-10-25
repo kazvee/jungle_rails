@@ -17,8 +17,8 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
+      >
+    <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -31,18 +31,19 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           > %>
-            <%# Categories %>
-          <%# </a>
+        <%# Categories %>
+        <%# </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown"> %>
-            <% Category.all.each do |category| %>
-            <li class="nav-item">
-              <%= link_to category.name, category, class: "nav-link" %>
-            </li>
-            <% end %>
-          <%# </ul>
-        </li> %>
+        <% Category.all.each do |category| %>
+        <li class="nav-item">
+          <%= link_to category.name, category, class: "nav-link" %>
+        </li>
+        <% end %>
+        <%# </ul>
+          </li> %>
       </ul>
       <ul class="navbar-nav">
+        <%= link_to 'About', '/about', class: "nav-link" %></li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-danger"
@@ -51,8 +52,8 @@
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-          >
-            Admin
+            >
+          Admin
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><%= link_to 'Dashboard', [:admin, :root], class: "nav-link" %></li>
@@ -68,21 +69,21 @@
   </div>
 </nav>
 <script>
-(function(){
-const gnr = () => {
-    const uptitle = document.querySelector("section.title h3");
-    const subtitle = document.querySelector("section.title h2");
-    const header = document.querySelector("header.hero");
-
-    uptitle.style.fontSize = "5em";
-    uptitle.style.fontWeight = 900;
-    uptitle.style.textAlign = "center";
-
-    subtitle.innerHTML =
-      "<p>Watch it bring you to your</p><p> shu-n-n-n-n-n-n-n-n knees, knees!</p>";
-  };
-  const title = document.querySelector("header.hero");
-  title.addEventListener("dblclick", gnr);
+  (function(){
+  const gnr = () => {
+      const uptitle = document.querySelector("section.title h3");
+      const subtitle = document.querySelector("section.title h2");
+      const header = document.querySelector("header.hero");
   
-})()
-  </script>
+      uptitle.style.fontSize = "5em";
+      uptitle.style.fontWeight = 900;
+      uptitle.style.textAlign = "center";
+  
+      subtitle.innerHTML =
+        "<p>Watch it bring you to your</p><p> shu-n-n-n-n-n-n-n-n knees, knees!</p>";
+    };
+    const title = document.querySelector("header.hero");
+    title.addEventListener("dblclick", gnr);
+    
+  })()
+    </script>
