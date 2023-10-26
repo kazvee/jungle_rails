@@ -5,7 +5,9 @@
   </header>
 
   <div class="well">
+    <p>
     <%= link_to 'All Products', [:admin, :products], class: 'btn btn-info' %>
+    </p>
   </div>
 
   <div class="row">
@@ -44,15 +46,19 @@
         </div>
 
         <div class="form-group">
+          <p>
           <%= form.label :price %>
           <%= form.text_field :price, class: 'form-control' %>
+          </p>
         </div>
 
 
 
         <div class="form-group">
+          <p>
           <%= form.label :image %>
           <%= form.file_field :image %>
+          </p>
         </div>
 
         <%= form.submit 'Create Product', class: 'btn btn-primary' %>
