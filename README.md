@@ -6,6 +6,14 @@ Additional design enhancements have been integrated as project Stretch Features,
 
 ## Final Product
 
+**App Overview Demo Video:**
+
+https://github.com/kazvee/jungle_rails/assets/109990289/884b3453-b38d-499f-8919-14ac59663ecb
+
+**Edit Cart Items Demo Video:**
+
+https://github.com/kazvee/jungle_rails/assets/109990289/816d916d-eb43-4d47-bcb7-5565a5461919
+
 **Screenshot of New User Registration Form:**
 
 ![New User Registration Form](app/assets/images/readme/User_Signup_Screenshot.png)
