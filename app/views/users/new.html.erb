@@ -1,0 +1,17 @@
+<header class="page-header">
+  <h1>New User Registration</h1>
+</header>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  First Name: <%= f.text_field :first_name, class: 'form-field' %>
+  Last Name: <%= f.text_field :last_name, class: 'form-field' %>
+  Email: <%= f.text_field :email, class: 'form-field' %>
+  Create a Secure Password: <%= f.password_field :password, class: 'form-field' %>
+  Re-enter your Secure Password: <%= f.password_field :password_confirmation, class: 'form-field' %>
+
+  <p>
+  <%= f.submit "Submit", class: 'btn btn-success' %>
+  </p>
+
+<% end %>
