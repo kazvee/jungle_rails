@@ -1,6 +1,26 @@
-# Jungle
+# 🪴 Jungle 
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+Jungle is a a mini e-commerce application built with Rails 6.1.
+
+Additional design enhancements have been integrated as project Stretch Features, to ensure a consistent user experience. 🌿
+
+## Final Product
+
+**Screenshot of New User Registration Form:**
+
+![New User Registration Form](app/assets/images/readme/User_Signup_Screenshot.png)
+
+**Screenshot of Existing User Login Form:**  
+
+![Existing User Login](app/assets/images/readme/User_Login_Screenshot.png)
+
+**Screenshot of Admin Categories View:**  
+
+![Admin Categories](app/assets/images/readme/Admin_Categories_Screenshot.png)
+
+## Purpose
+
+This project was created by [me](https://github.com/kazvee) as part of my learnings at [Lighthouse Labs](https://www.lighthouselabs.ca/en/web-development-flex-program).
 
 ## Setup
 
