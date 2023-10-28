@@ -8,6 +8,7 @@ Additional design enhancements have been integrated as project Stretch Features,
 
 **Demo Video:**
 
+https://github.com/kazvee/jungle_rails/assets/109990289/fb683726-38d1-4fd8-8c28-53e3d05bbd8d
 
 **Screenshot of Landing Page:**
 
