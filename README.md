@@ -6,25 +6,24 @@ Additional design enhancements have been integrated as project Stretch Features,
 
 ## Final Product
 
-**App Overview Demo Video:**
+**Demo Video:**
 
-https://github.com/kazvee/jungle_rails/assets/109990289/884b3453-b38d-499f-8919-14ac59663ecb
 
-**Edit Cart Items Demo Video:**
+**Screenshot of Landing Page:**
 
-https://github.com/kazvee/jungle_rails/assets/109990289/816d916d-eb43-4d47-bcb7-5565a5461919
+![Landing Page View](app/assets/images/readme/Landing_Page_Screenshot.png)
 
-**Screenshot of New User Registration Form:**
+**Screenshot of Stripe Payment Page:**  
 
-![New User Registration Form](app/assets/images/readme/User_Signup_Screenshot.png)
+![Stripe Payment Page](app/assets/images/readme/Stripe_Payment_Screenshot.png)
 
-**Screenshot of Existing User Login Form:**  
+**Screenshot of Order Confirmation Page:**  
 
-![Existing User Login](app/assets/images/readme/User_Login_Screenshot.png)
+![Order Confirmation Page](app/assets/images/readme/Order_Confirmation_Screenshot.png)
 
-**Screenshot of Admin Categories View:**  
+**Screenshot of New Product Validation Page:**  
 
-![Admin Categories](app/assets/images/readme/Admin_Categories_Screenshot.png)
+![New Product Validation Page](app/assets/images/readme/New_Product_Validation_Screenshot.png)
 
 ## Purpose
 
