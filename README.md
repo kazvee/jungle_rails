@@ -1,7 +1,6 @@
 # 🪴 Jungle 
 
-Jungle is a a mini e-commerce application built with Rails 6.1.
-
+Jungle is a a mini e-commerce application built with Rails 6.1.\
 Additional design enhancements have been integrated as project Stretch Features, to ensure a consistent user experience. 🌿
 
 ## Final Product
@@ -25,6 +24,58 @@ https://github.com/kazvee/jungle_rails/assets/109990289/fb683726-38d1-4fd8-8c28-
 **Screenshot of New Product Validation Page:**  
 
 ![New Product Validation Page](app/assets/images/readme/New_Product_Validation_Screenshot.png)
+
+### Store Features
+
+**Our valued customers are the root of our growing business 🌱**\
+**We are proud to offer *fern*tastic quality plants at blooming low prices 🌸**\
+**Come visit today, we promise you won't leaf empty-handed 🌿**
+
+Our shop provides a smooth and visually consistent shopping experience for customers.\
+With a range of menus and filtering options, we invite our website guests to interact with and explore our range of beautiful plants.
+
+Additionally, store Admins have access to login-protected menus, enabling them to efficiently manage store inventory and product categorisation.
+
+### User Section
+
+* **Landing Page**
+  - Offers a visually appealing overview of all products, with dynamic product stock availability badges
+
+* **Product Details**
+  - Provides detailed information and product specifications
+
+* **Categories Menu**
+  - Enables customers to browse through various categorized lists of products
+
+* **Products Menu**
+  - Discover the entire range of products offered at this store
+
+* **Checkout Page**
+  - Review shopping cart contents, make any adjustments, and proceed to order
+
+* **Order Summary**
+  - Receive a detailed summary of the completed order
+
+* **About Us**
+  - Learn more about our online shop and the lovely people who run it
+
+### Admin Section
+
+**Restricted access via basic HTTP authentication**
+
+* **Admin Dashboard**
+  - View all categories and products in one place for efficient store management
+
+* **Products Administration**
+  - Manage all available products from a single page
+  - **Add New Product Page**
+    - Create new products easily
+    - Built-in validation for each data field ensures inventory database accuracy
+
+* **Categories Administration**
+  - Manage all item categories from a single page
+  - **Add New Category**
+    - Create new categories easily
 
 ## Purpose
 
