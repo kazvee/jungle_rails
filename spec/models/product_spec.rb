@@ -48,5 +48,17 @@ RSpec.describe Product, type: :model do
       expect(product).not_to be_valid
       expect(product.errors.full_messages).to eq(["Quantity can't be blank"])
     end
+
+    it 'is not valid when category is nil' do
+      category = Category.new(name: 'Example Category')
+      product = Product.new(
+        name: 'Example Product',
+        price: 100.00,
+        quantity: 10,
+        category: nil
+      )
+      expect(product).not_to be_valid
+      expect(product.errors.full_messages).to eq(["Category must exist", "Category can't be blank"])
+    end
   end
 end
