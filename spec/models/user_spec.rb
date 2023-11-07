@@ -27,5 +27,14 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
       expect(user.errors.full_messages).to eq(["Password can't be blank"])
     end
+
+    it 'is not valid if password_confirmation field is nil' do
+      user = User.new(
+        password: 'password123',
+        password_confirmation: nil
+      )
+      expect(user).not_to be_valid
+      expect(user.errors.full_messages).to eq(["Password confirmation can't be blank"])
+    end
   end
 end
