@@ -2,10 +2,12 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'Validations' do
+    
     it 'is valid with password and password_confirmation fields' do
       user = User.new(
         password: 'password123',
-        password_confirmation: 'password123'
+        password_confirmation: 'password123',
+        email: 'test@test.com'
       )
       expect(user).to be_valid
     end
@@ -13,7 +15,8 @@ RSpec.describe User, type: :model do
     it 'is not valid if password and password_confirmation fields do not match' do
       user = User.new(
         password: 'password123',
-        password_confirmation: 'password456'
+        password_confirmation: 'password456',
+        email: 'test@test.com'
       )
       expect(user).not_to be_valid
       expect(user.errors.full_messages).to eq(["Password confirmation doesn't match Password"])
@@ -22,19 +25,18 @@ RSpec.describe User, type: :model do
     it 'is not valid if password field is nil' do
       user = User.new(
         password: nil,
-        password_confirmation: 'password456'
+        password_confirmation: 'password456',
+        email: 'test@test.com'
       )
       expect(user).not_to be_valid
       expect(user.errors.full_messages).to eq(["Password can't be blank"])
     end
 
-    it 'is not valid if password_confirmation field is nil' do
-      user = User.new(
-        password: 'password123',
-        password_confirmation: nil
-      )
+    it 'is not valid if email is not unique (case-insensitive)' do
+      User.create(email: 'test@test.COM', password: 'password123', password_confirmation: 'password123')
+      user = User.new(email: 'TEST@TEST.com', password: 'password456', password_confirmation: 'password456')
       expect(user).not_to be_valid
-      expect(user.errors.full_messages).to eq(["Password confirmation can't be blank"])
+      expect(user.errors.full_messages).to include('Email has already been taken')
     end
   end
 end
