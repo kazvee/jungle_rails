@@ -38,6 +38,18 @@ RSpec.describe User, type: :model do
       expect(user.errors.full_messages).to eq(["Password can't be blank"])
     end
 
+    it 'is not valid if password_confirmation field is nil' do
+      user = User.new(
+        first_name: "First",
+        last_name: "Last",
+        password: 'password456',
+        password_confirmation: nil,
+        email: 'test@test.com'
+      )
+      expect(user).not_to be_valid
+      expect(user.errors.full_messages).to eq(["Password confirmation can't be blank"])
+    end
+
     it 'is not valid if email is not unique (case-insensitive)' do
       User.create(email: 'test@test.COM', password: 'password123', password_confirmation: 'password123', first_name: "First", last_name: "Last")
       user = User.new(email: 'TEST@TEST.com', password: 'password456', password_confirmation: 'password456', first_name: "First", last_name: "Last")
