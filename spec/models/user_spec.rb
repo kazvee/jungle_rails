@@ -35,19 +35,31 @@ RSpec.describe User, type: :model do
         email: 'test@test.com'
       )
       expect(user).not_to be_valid
-      expect(user.errors.full_messages).to eq(["Password can't be blank"])
+      expect(user.errors.full_messages).to eq(["Password can't be blank", "Password is too short (minimum is 6 characters)"])
     end
 
     it 'is not valid if password_confirmation field is nil' do
       user = User.new(
         first_name: "First",
         last_name: "Last",
-        password: 'password456',
+        password: 'password123',
         password_confirmation: nil,
         email: 'test@test.com'
       )
       expect(user).not_to be_valid
       expect(user.errors.full_messages).to eq(["Password confirmation can't be blank"])
+    end
+
+    it 'is not valid if password is below the minimum length (6 characters)' do
+      user = User.new(
+        first_name: "First",
+        last_name: "Last",
+        password: 'pass1',
+        password_confirmation: 'pass1',
+        email: 'test@test.com'
+      )
+      expect(user).not_to be_valid
+      expect(user.errors.full_messages).to eq(["Password is too short (minimum is 6 characters)"])
     end
 
     it 'is not valid if email is not unique (case-insensitive)' do
