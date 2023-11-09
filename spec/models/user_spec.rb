@@ -3,8 +3,10 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'Validations' do
     
-    it 'is valid with password and password_confirmation fields' do
+    it 'is valid with all required fields (first name, last name, email, password, password_confirmation)' do
       user = User.new(
+        first_name: "First",
+        last_name: "Last",
         password: 'password123',
         password_confirmation: 'password123',
         email: 'test@test.com'
@@ -14,6 +16,8 @@ RSpec.describe User, type: :model do
 
     it 'is not valid if password and password_confirmation fields do not match' do
       user = User.new(
+        first_name: "First",
+        last_name: "Last",
         password: 'password123',
         password_confirmation: 'password456',
         email: 'test@test.com'
@@ -24,6 +28,8 @@ RSpec.describe User, type: :model do
 
     it 'is not valid if password field is nil' do
       user = User.new(
+        first_name: "First",
+        last_name: "Last",
         password: nil,
         password_confirmation: 'password456',
         email: 'test@test.com'
@@ -33,10 +39,34 @@ RSpec.describe User, type: :model do
     end
 
     it 'is not valid if email is not unique (case-insensitive)' do
-      User.create(email: 'test@test.COM', password: 'password123', password_confirmation: 'password123')
-      user = User.new(email: 'TEST@TEST.com', password: 'password456', password_confirmation: 'password456')
+      User.create(email: 'test@test.COM', password: 'password123', password_confirmation: 'password123', first_name: "First", last_name: "Last")
+      user = User.new(email: 'TEST@TEST.com', password: 'password456', password_confirmation: 'password456', first_name: "First", last_name: "Last")
       expect(user).not_to be_valid
       expect(user.errors.full_messages).to include('Email has already been taken')
+    end
+
+    it 'is not valid if first_name field is nil' do
+      user = User.new(
+        first_name: nil,
+        last_name: "Last",
+        password: 'password456',
+        password_confirmation: 'password456',
+        email: 'test@test.com'
+      )
+      expect(user).not_to be_valid
+      expect(user.errors.full_messages).to include("First name can't be blank")
+    end
+
+    it 'is not valid if last_name field is nil' do
+      user = User.new(
+        first_name: "First",
+        last_name: nil,
+        password: 'password456',
+        password_confirmation: 'password456',
+        email: 'test@test.com'
+      )
+      expect(user).not_to be_valid
+      expect(user.errors.full_messages).to include("Last name can't be blank")
     end
   end
 end
