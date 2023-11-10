@@ -93,4 +93,12 @@ RSpec.describe User, type: :model do
       expect(user.errors.full_messages).to include("Last name can't be blank")
     end
   end
+
+  describe '.authenticate_with_credentials' do
+    it 'is authenticated successfully if user types a few spaces before/after their email address' do
+      user = User.create(email: 'example@domain.com', password: 'password123', password_confirmation: 'password123', first_name: "First", last_name: "Last")
+      authenticated_user = User.authenticate_with_credentials(' example@domain.com ', 'password123')
+      expect(authenticated_user).to eq(user)
+    end
+  end  
 end
