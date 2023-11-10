@@ -1,4 +1,5 @@
-describe('navigates from the home page to the product detail page by clicking on a product', () => {
+describe('navigates to product detail page from home page', () => {
+
   beforeEach(() => {
     cy.visit('/');
   });
