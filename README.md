@@ -105,7 +105,7 @@ If Rails is complaining about authentication to the database, uncomment the user
 
 ### Rspec
 
-Use command `bin/rspec` to run all tests (specs) in the `spec` directory.
+Use command `bin/rspec` to run all tests (specs) in the `spec` directory.\
 Alternatively run `bin/rspec --format documentation` for more verbose results, or create a `.rspec` file in project root which contains `--format documentation` to keep the flag on.
 
 ### Cypress
