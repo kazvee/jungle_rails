@@ -86,7 +86,7 @@ This project was created by [me](https://github.com/kazvee) as part of my learni
 1. Run `bundle install` to install dependencies
 2. Create `config/database.yml` by copying `config/database.example.yml`
 3. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-4. Run `bin/rails db:reset` to create, load and seed db
+4. Run `bin/rails db:reset` to create, load and seed both the `development` and `test` databases
 5. Create .env file based on .env.example
 6. Sign up for a Stripe account
 7. Put Stripe (test) keys into appropriate .env vars
@@ -95,6 +95,17 @@ This project was created by [me](https://github.com/kazvee) as part of my learni
 ## Database
 
 If Rails is complaining about authentication to the database, uncomment the user and password fields from `config/database.yml` in the development and test sections, and replace if necessary the user and password `development` to an existing database user.
+
+## Testing
+
+### Rspec
+
+Use command `bin/rspec` to run all tests (specs) in the `spec` directory.
+Alternatively run `bin/rspec --format documentation` for more verbose results, or create a `.rspec` file in project root which contains `--format documentation` to keep the flag on.
+
+### Cypress
+
+Use command `bin/rails cypress:open` to run all tests in the `cypress/integration` folder.
 
 ## Stripe Testing
 
