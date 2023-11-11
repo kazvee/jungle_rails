@@ -1,13 +1,18 @@
 # 🪴 Jungle 
 
-Jungle is a a mini e-commerce application built with Rails 6.1.\
-Additional design enhancements have been integrated as project Stretch Features, to ensure a consistent user experience. 🌿
+Jungle is a a mini e-commerce application built with Rails 6.1. 🚂\
+Additional design enhancements have been integrated as project Stretch Features, to ensure a consistent user experience. 🌿\
+Utilizes Rspec & Cypress automated testing to ensure and maintain code reliability and quality. 🧪
 
 ## Final Product
 
 **Demo Video:**
 
 https://github.com/kazvee/jungle_rails/assets/109990289/fb683726-38d1-4fd8-8c28-53e3d05bbd8d
+
+**Video of Cypress test runner:**
+
+https://github.com/kazvee/jungle_rails/assets/109990289/a8287459-bcb7-4aa2-b2d9-46c282580f8c
 
 **Screenshot of Landing Page:**
 
